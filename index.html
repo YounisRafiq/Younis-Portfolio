@@ -682,7 +682,7 @@
         </div>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button type="submit" class="btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+          <button type="submit" class="btn" onclick="Submitmessage()">Send Message <i class="fa-solid fa-paper-plane"></i></button>
           <div style="color:var(--muted); font-size:0.95rem">or contact me on socials below</div>
         </div>
       </form>
@@ -718,6 +718,9 @@
         showCursor: false
       });
     });
+
+
+
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 let menuOpen = false;
@@ -797,6 +800,103 @@ document.addEventListener("click", (e) => {
         setActiveHash(current);
       }, { passive:true });
 
+        (function(){
+  const form = document.getElementById('contactForm');
+  if (!form) return; // nothing to do if form not present
+
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const subject = document.getElementById('subject');
+  const message = document.getElementById('message');
+
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const subjectError = document.getElementById('subjectError');
+  const messageError = document.getElementById('messageError');
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function showError(el, text) {
+    if (!el) return;
+    el.textContent = text;
+    el.style.display = 'block';
+  }
+  function hideError(el) {
+    if (!el) return;
+    el.style.display = 'none';
+  }
+
+  // Live input handlers (remove / update error as user types)
+  if (name) name.addEventListener('input', () => { if (name.value.trim() !== '') hideError(nameError); });
+  if (subject) subject.addEventListener('input', () => { if (subject.value.trim() !== '') hideError(subjectError); });
+  if (message) message.addEventListener('input', () => { if (message.value.trim() !== '') hideError(messageError); });
+
+  if (email) {
+    email.addEventListener('input', () => {
+      const v = email.value.trim();
+      if (v === '') {
+        showError(emailError, "Email can't be empty");
+      } else if (!emailRegex.test(v)) {
+        showError(emailError, "Invalid email");
+      } else {
+        hideError(emailError);
+      }
+    });
+  }
+
+  form.addEventListener('submit', function(evt){
+    evt.preventDefault(); // stop the page from reloading / jumping
+
+    // clear prior errors
+    [nameError, emailError, subjectError, messageError].forEach(hideError);
+
+    let valid = true;
+    let firstInvalid = null;
+
+    if (!name || name.value.trim() === '') {
+      showError(nameError, "Name can't be empty");
+      valid = false; firstInvalid = firstInvalid || name;
+    }
+
+    const emailVal = email ? email.value.trim() : '';
+    if (!email || emailVal === '') {
+      showError(emailError, "Email can't be empty");
+      valid = false; firstInvalid = firstInvalid || email;
+    } else if (!emailRegex.test(emailVal)) {
+      showError(emailError, "Invalid email");
+      valid = false; firstInvalid = firstInvalid || email;
+    }
+
+    if (!subject || subject.value.trim() === '') {
+      showError(subjectError, "Subject can't be empty");
+      valid = false; firstInvalid = firstInvalid || subject;
+    }
+
+    if (!message || message.value.trim() === '') {
+      showError(messageError, "Message can't be empty");
+      valid = false; firstInvalid = firstInvalid || message;
+    }
+
+    if (!valid) {
+      if (firstInvalid && typeof firstInvalid.focus === 'function') firstInvalid.focus();
+      return;
+    }
+
+    // success - show SweetAlert2 if loaded, otherwise fallback alert
+    if (window.Swal && typeof Swal.fire === 'function') {
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent',
+        text: 'Thanks for reaching out — I will reply as soon as possible.',
+        confirmButtonColor: '#00a9ad'
+      }).then(() => form.reset());
+    } else {
+      alert('Message sent — thanks!');
+      form.reset();
+    }
+  });
+})();
+
       // smooth scroll offset and set active on click
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -814,7 +914,7 @@ document.addEventListener("click", (e) => {
         });
       });
     })();
-    navLinks.querySelectorAll("a").forEach(link => {
+  navLinks.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("show");
   });
@@ -825,65 +925,15 @@ document.addEventListener("click", (e) => {
     /* ---------------------
       Contact form validation + SweetAlert2
       --------------------- */
-    (function(){
-      const form = document.getElementById('contactForm');
-      const name = document.getElementById('name');
-      const email = document.getElementById('email');
-      const subject = document.getElementById('subject');
-      const message = document.getElementById('message');
+    /* ---------------------
+  Contact form validation + SweetAlert2
+  --------------------- */
+/* ---------------------
+  Contact form validation + SweetAlert2
+  --------------------- */
 
-      const nameError = document.getElementById('nameError');
-      const emailError = document.getElementById('emailError');
-      const subjectError = document.getElementById('subjectError');
-      const messageError = document.getElementById('messageError');
 
-      function clearErrors(){
-        [nameError,emailError,subjectError,messageError].forEach(e => { e.style.display='none'; });
-      }
 
-      function isValidEmail(e){
-        return /\S+@\S+\.\S+/.test(e);
-      }
-
-      form.addEventListener('submit', function(evt){
-        evt.preventDefault();
-        clearErrors();
-        let valid = true;
-
-        if (name.value.trim() === ''){
-          nameError.style.display = 'block';
-          valid = false;
-        }
-        if (email.value.trim() === ''){
-          emailError.textContent = "Email can't be empty";
-          emailError.style.display = 'block';
-          valid = false;
-        } else if (!isValidEmail(email.value.trim())){
-          emailError.textContent = "Please enter a valid email";
-          emailError.style.display = 'block';
-          valid = false;
-        }
-        if (subject.value.trim() === ''){
-          subjectError.style.display = 'block';
-          valid = false;
-        }
-        if (message.value.trim() === ''){
-          messageError.style.display = 'block';
-          valid = false;
-        }
-
-        if (!valid) return;
-
-        Swal.fire({
-          icon: 'success',
-          title: 'Message Sent',
-          text: 'Thanks for reaching out — I will reply as soon as possible.',
-          confirmButtonColor: '#00a9ad'
-        });
-
-        form.reset();
-      });
-    })();
 
     /* ---------------------
        Download CV placeholder fallback
