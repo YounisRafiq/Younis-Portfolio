@@ -454,7 +454,7 @@
       <div class="hero-right">
         <div class="avatar reveal" data-reveal>
           <!-- ADD YOUR PHOTO HERE (leave src blank for now) -->
-          <img src="images/its_me-removebg-preview.png" alt="Younis photo — add your image here" style="object-fit: cover; object-position: top;">
+          <img src="images/its_me-removebg-preview.png" alt="Younis photo — add your image here" style="object-fit: cover; object-position: top; border: 2px solid var(--accent);">
         </div>
       </div>
     </section>
@@ -656,20 +656,20 @@
         <div class="form-row">
           <div style="flex:1 1 260px;">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" style="border: 2px solid #009688">
+            <input id="name" type="text" placeholder="Your name" style="border: 2px solid var(--accent)">
             <div id="nameError" class="error">Name can't be empty</div>
           </div>
 
           <div style="flex:1 1 260px;">
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@example.com" style="border: 2px solid #009688">
+            <input id="email" type="email" placeholder="you@example.com" style="border: 2px solid var(--accent)">
             <div id="emailError" class="error">Email can't be empty</div>
           </div>
         </div>
 
         <div style="margin-bottom:12px;">
           <label for="subject">Subject</label>
-          <input id="subject" type="text" placeholder="Subject" style="border: 2px solid #009688
+          <input id="subject" type="text" placeholder="Subject" style="border: 2px solid var(--accent)
 
 ;">
           <div id="subjectError" class="error">Subject can't be empty</div>
@@ -677,12 +677,12 @@
 
         <div style="margin-bottom:12px;">
           <label for="message">Message</label>
-          <textarea id="message" rows="6" placeholder="Write your message..." style="border: 2px solid #009688"></textarea>
+          <textarea id="message" rows="6" placeholder="Write your message..." style="border: 2px solid var(--accent)"></textarea>
           <div id="messageError" class="error">Message can't be empty</div>
         </div>
 
         <div style="display:flex; gap:12px; align-items:center;">
-          <button type="submit" class="btn" onclick="Submitmessage()">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+          <button type="submit" class="btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
           <div style="color:var(--muted); font-size:0.95rem">or contact me on socials below</div>
         </div>
       </form>
