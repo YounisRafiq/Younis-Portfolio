@@ -2,6 +2,7 @@
         new Typed("#typed", {
           strings: [
             "Frontend Developer",
+            "Ai Expert",
             "UI / Interaction Designer",
             "Bug Resolver",
           ],
@@ -264,52 +265,5 @@
         });
       })();
 
-      document.getElementById('chatbot-icon').addEventListener('click', () => {
-  document.getElementById('chatbot').style.display = 'flex';
-  document.getElementById('chatbot-icon').style.display = 'none';
-});
 
-document.getElementById('close-chatbot').addEventListener('click', () => {
-  document.getElementById('chatbot').style.display = 'none';
-  document.getElementById('chatbot-icon').style.display = 'flex';
-});
-
-document.getElementById('send-btn').addEventListener('click', sendMessage);
-document.getElementById('chatbot-input').addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') sendMessage();
-});
-
-function sendMessage() {
-  const input = document.getElementById('chatbot-input');
-  const message = input.value.trim();
-  if (!message) return;
-
-  addMessage(message, 'user');
-  input.value = '';
-
-  // Simple bot responses
-  setTimeout(() => {
-    let botReply = '';
-    if (message.toLowerCase().includes('skills')) {
-      botReply = "I’m skilled in HTML, CSS, JavaScript, React, Bootstrap, Git & GitHub.";
-    } else if (message.toLowerCase().includes('projects')) {
-      botReply = "I've built a portfolio, MovieLab app, and a text-to-speech converter.";
-    } else if (message.toLowerCase().includes('about')) {
-      botReply = "I’m Younis, a passionate frontend developer who loves creating beautiful websites.";
-    } else {
-      botReply = "I’m not sure about that, but I can tell you about my skills, projects, or experience.";
-    }
-    addMessage(botReply, 'bot');
-  }, 500);
-}
-
-function addMessage(text, sender) {
-  const msgDiv = document.createElement('div');
-  msgDiv.classList.add('message', sender);
-  msgDiv.textContent = text;
-  document.getElementById('chatbot-body').appendChild(msgDiv);
-  document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
-}
-
-// Get elements
 
