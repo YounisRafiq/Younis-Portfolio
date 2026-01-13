@@ -259,6 +259,7 @@
         align-items: start;
         margin-top: 18px;
       }
+    
       .about-text {
         background: var(--card);
         border-radius: var(--radius);
@@ -291,12 +292,15 @@
         font-size: 0.95rem;
       }
 
+  
+
       /* Services */
       .services-grid {
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
         margin-top: 18px;
+        cursor: pointer;
       }
       .small-btn {
         border: 1px solid #009688 !important;
@@ -311,7 +315,7 @@
         border: 1px solid rgba(255, 255, 255, 0.02);
       }
       .service-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       }
       .service-card h3 {
@@ -329,9 +333,11 @@
         gap: 20px;
         margin-top: 18px;
       }
+     
       .project {
         background: var(--card);
         border-radius: 12px;
+        cursor: pointer;
         padding: 14px;
         border: 1px solid rgba(255, 255, 255, 0.02);
         transition: transform 0.2s ease, box-shadow 0.2s ease;

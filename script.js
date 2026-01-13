@@ -13,15 +13,16 @@
           showCursor: false,
         });
       });
+      
+    
 
 
       const menuToggle = document.getElementById("menuToggle");
       const navMenu = document.getElementById("navMenu");
       let menuOpen = false;
 
-      // Toggle menu on icon click
       menuToggle.addEventListener("click", (e) => {
-        e.stopPropagation(); // prevent outside click from firing
+        e.stopPropagation(); 
         menuOpen = !menuOpen;
         navMenu.classList.toggle("show", menuOpen);
         menuToggle.innerHTML = menuOpen
@@ -39,7 +40,7 @@
       });
       
       
-      // Close menu when clicking outside
+     
       document.addEventListener("click", (e) => {
         if (
           menuOpen &&
@@ -52,10 +53,6 @@
         }
       });
 
-
-      /* ---------------------
-       Reveal on scroll (IntersectionObserver)
-       --------------------- */
       (function () {
         const items = document.querySelectorAll(".reveal");
         if (!("IntersectionObserver" in window)) {
@@ -80,9 +77,6 @@
         });
       })();
 
-      /* ---------------------
-       Active nav link on scroll + click (works with header links)
-       --------------------- */
       (function () {
         const sections = document.querySelectorAll("main section[id]");
         const navLinks = document.querySelectorAll("header nav a");
@@ -93,7 +87,6 @@
           );
         }
 
-        // on scroll: find section in view
         window.addEventListener(
           "scroll",
           () => {
@@ -135,7 +128,6 @@
             el.style.display = "none";
           }
 
-          // Live input handlers (remove / update error as user types)
           if (name)
             name.addEventListener("input", () => {
               if (name.value.trim() !== "") hideError(nameError);
@@ -163,9 +155,7 @@
           }
 
           form.addEventListener("submit", function (evt) {
-            evt.preventDefault(); // stop the page from reloading / jumping
-
-            // clear prior errors
+            evt.preventDefault(); 
             [nameError, emailError, subjectError, messageError].forEach(
               hideError
             );
@@ -208,7 +198,6 @@
               return;
             }
 
-            // success - show SweetAlert2 if loaded, otherwise fallback alert
             if (window.Swal && typeof Swal.fire === "function") {
               Swal.fire({
                 icon: "success",
@@ -223,7 +212,6 @@
           });
         })();
 
-        // smooth scroll offset and set active on click
         navLinks.forEach((link) => {
           link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -238,7 +226,6 @@
               window.scrollY -
               headerOffset;
             window.scrollTo({ top, behavior: "smooth" });
-            // set active immediately
             navLinks.forEach((a) => a.classList.remove("active"));
             link.classList.add("active");
           });
@@ -264,6 +251,9 @@
           }
         });
       })();
+
+      
+     
 
 
 

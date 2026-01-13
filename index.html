@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Younis — Frontend Developer</title>
 
-    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   </head>
@@ -38,7 +34,6 @@
         </div>
       </div>
 
-      <!-- Menu icon -->
       <div class="menu-toggle" id="menuToggle">
         <i class="fa-solid fa-bars"></i>
       </div>
@@ -54,7 +49,6 @@
       </nav>
     </header>
 
-    <!-- HEADER -->
 
     <main class="container" id="main">
       <!-- HERO -->
@@ -68,7 +62,7 @@
           <div class="typed-wrap" id="typed"></div>
 
           <p class="hero-desc">
-            I am a Frontend Developer focused on crafting performant,
+            Am a Frontend Developer focused on crafting performant,
             accessible, and beautiful web experiences. I specialize in
             converting UI/UX designs into production-grade interfaces using
             modern JavaScript, component-driven frameworks, and robust CSS
@@ -84,7 +78,7 @@
               <i class="fa-solid fa-paper-plane" style="opacity: 0.9"></i
             ></a>
             <!-- Replace href with path to CV when available -->
-            <a class="btn ghost" id="downloadCV" href="CV/My-CV.pdf" download
+            <a class="btn ghost" id="downloadCV" href="CV/My_CV.pdf" download
               >Download CV
               <i class="fa-solid fa-download" style="opacity: 0.9"></i
             ></a>
@@ -93,8 +87,7 @@
 
         <div class="hero-right">
           <div class="avatar reveal" data-reveal>
-            <!-- ADD YOUR PHOTO HERE (leave src blank for now) -->
-            <img
+            <img id="my-image"
               src="images/its_me-removebg-preview.png"
               alt="Younis photo — add your image here"
               style="
@@ -107,7 +100,8 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
+
+          <!-- ABOUT -->
       <section id="about" class="about">
         <h2 class="section-title reveal" data-reveal>About Me</h2>
 
@@ -236,13 +230,12 @@
                 alt="Weather app image - add your image here"
               />
             </div>
-            <h4>A React NewsApp</h4>
+            <h4>NewsApp – Real-Time News Platform</h4>
             <p>
-              Convert news articles into natural-sounding speech with
-              customizable voice selection, adjustable speaking rate, and pitch
-              controls
+              Fetched real-time news data seamlessly using APIs.
+              Displayed news dynamically by categories for easy navigation.
             </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript • ReactJs</div>
+            <div class="tech"><b>Tech</b> : HTML • CSS • JavaScript • ReactJs</div>
             <div class="proj-ctas">
               <a
                 class="small-btn"
@@ -261,26 +254,25 @@
           <div class="project reveal" data-reveal>
             <div class="project-thumb">
               <img
-                src="images/To-Do List Template—And Everything You Need To Know.jpg"
+                src="images/movie.png"
                 alt="To-do list project image - add your image here"
               />
             </div>
-            <h4>To-do List App</h4>
+            <h4>MovieLab – Movie Discovery Platform</h4>
             <p>
-              Create, edit and organize daily tasks with local storage
-              persistence and filters.
-            </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript</div>
+ Fetched and displayed movies dynamically using APIs.
+ Enabled category-wise browsing and search for seamless user experience.            </p>
+            <div class="tech"><b>Tech</b> : HTML • CSS • JavaScript • Reactjs</div>
             <div class="proj-ctas">
               <a
                 class="small-btn"
-                href="https://github.com/YounisRafiq/To-Do-List-app.git"
+                href="https://github.com/YounisRafiq/MovieLab-Movie-Discovery-Platform.git"
                 target="_blank"
                 >GitHub</a
               >
               <a
                 class="small-btn cta"
-                href="https://task-mate-a-smart-to-do-list-app.vercel.app"
+                href=" https://movie-lab-movie-discovery-platform.vercel.app"
                 target="_blank"
                 >Live Preview</a
               >
@@ -291,26 +283,26 @@
           <div class="project reveal" data-reveal>
             <div class="project-thumb">
               <img
-                src="images/5 Best Password Ideas to Secure Your Digital Life in 2025 - TalkBitz.jpg"
+                src="images/shop.png"
                 alt="Password generator image - add your image here"
               />
             </div>
-            <h4>Strong Password Generator</h4>
+            <h4>Shopivo – E-Commerce Platform</h4>
             <p>
-              Secure password generator with length & complexity controls and
-              copy-to-clipboard.
+             Fetched products dynamically using APIs for real-time updates.
+              Displayed products by category with smooth filtering and navigation.
             </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript</div>
+            <div class="tech"><b>Tech</b> : HTML • CSS • JavaScript • Reactjs</div>
             <div class="proj-ctas">
               <a
                 class="small-btn"
-                href="https://github.com/YounisRafiq/Strong-Password-Generator.git"
+                href="https://github.com/YounisRafiq/Shopivo-E-Commerce-Platform.git"
                 target="_blank"
                 >GitHub</a
               >
               <a
                 class="small-btn cta"
-                href="https://strong-password-generator-alpha.vercel.app
+                href=" https://shopivo-e-commerce-platform.vercel.app 
 "
                 target="_blank"
                 >Live Preview</a
@@ -322,17 +314,17 @@
           <div class="project reveal" data-reveal>
             <div class="project-thumb">
               <img
-                src="images/download (1).jpg"
+                src="images/cynthia (1).png"
                 style="object-fit: cover"
                 alt="Weather app image - add your image here"
               />
             </div>
-            <h4>Weather App</h4>
+            <h4>Cynthia Ugwo – Animated Personal Website</h4>
             <p>
-              Fetch live weather using an API with search, unit toggle, and
-              responsive layout.
+             Created a fully animated, interactive website using GSAP.
+             Enhanced user engagement with responsive animations.
             </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript • API</div>
+            <div class="tech"><b>Tech</b> : HTML • CSS • JavaScript • GSAP</div>
             <div class="proj-ctas">
               <a
                 class="small-btn"
@@ -340,169 +332,12 @@
                 target="_blank"
                 >GitHub</a
               >
-              <a class="small-btn cta" href="https://a-beautiful-weather-app.vercel.app" target="_blank">Live Preview</a>
+              <a class="small-btn cta" href="https://cynthiaugwotoronto.vercel.app " target="_blank">Live Preview</a>
             </div>
           </div>
 
-          <!-- Project 5 -->
-          <div class="project reveal" data-reveal>
-            <div class="project-thumb">
-              <img
-                src="images/Quiz Vectors, Photos and PSD files _ Free Download.jpg"
-                alt="Q&A app image - add your image here"
-              />
-            </div>
-            <h4>Question Answer App</h4>
-            <p>
-              Interactive Q&A app with posting, answering, and client-side
-              moderation UI.
-            </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript</div>
-            <div class="proj-ctas">
-              <a
-                class="small-btn"
-                href="https://github.com/YounisRafiq/Questar---A-Question-Answer-App.git"
-                target="_blank"
-                >GitHub</a
-              >
-              <a class="small-btn cta" href="https://questar-a-question-answer-app.vercel.app
-" target="_blank">Live Preview</a>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="project reveal" data-reveal>
-            <div class="project-thumb">
-              <img
-                src="images/smart.png"
-                alt="Smart Study Schedular"
-              />
-            </div>
-            <h4>Smart Study Schedular</h4>
-            <p>
-             A simple Smart Study Scheduler prototype with task listing, daily schedule, and completion tracking UI
-            </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript</div>
-            <div class="proj-ctas">
-              <a
-                class="small-btn"
-                href="https://github.com/YounisRafiq/Smart-Study-Schedular.git"
-                target="_blank"
-                >GitHub</a
-              >
-              <a class="small-btn cta" href="https://smart-study-schedular.vercel.app
-" target="_blank">Live Preview</a>
-            </div>
-          </div>
-
-          <!-- Project 7 -->
-          <div class="project reveal" data-reveal>
-            <div class="project-thumb">
-              <img
-                src="images/download.jpg"
-                alt="Q&A app image - add your image here"
-              />
-            </div>
-            <h4>A Realtime Stopwatch</h4>
-            <p>
-              Interactive stopwatch app with start, pause, reset, and
-              client-side lap tracking UI.
-            </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript</div>
-            <div class="proj-ctas">
-              <a
-                class="small-btn"
-                href="https://github.com/YounisRafiq/StopWatch.git"
-                target="_blank"
-                >GitHub</a
-              >
-              <a class="small-btn cta" href="https://realtime-stop-watch.vercel.app" target="_blank">Live Preview</a>
-            </div>
-          </div>
-
-          <!-- Project 8 -->
-          <div class="project reveal" data-reveal>
-            <div class="project-thumb">
-              <img
-                src="images/Lithuanian Text To Speech.jpg"
-                style="object-fit: cover"
-                alt="Weather app image - add your image here"
-              />
-            </div>
-            <h4>Text to Speech Convertor</h4>
-            <p>
-              Convert text to natural-sounding speech with voice selection, rate
-              & pitch and controls
-            </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript • API</div>
-            <div class="proj-ctas">
-              <a
-                class="small-btn"
-                href="https://github.com/YounisRafiq/Text-to-Speech-Convertor.git"
-                target="_blank"
-                >GitHub</a
-              >
-              <a class="small-btn cta" href="https://text-to-speech-convertor-ochre.vercel.app" target="_blank">Live Preview</a>
-            </div>
-          </div>
-
-          <!-- Project 9 -->
-          <div class="project reveal" data-reveal>
-            <div class="project-thumb">
-              <img
-                src="images/Calculator stock image_ Image of fingers, figuring, costs - 1825449.jpg"
-                style="object-fit: cover; object-position: center"
-                alt="Calculator project image - add your image here"
-              />
-            </div>
-            <h4>Fully Functional Calculator</h4>
-            <p>
-              A responsive calculator app supporting basic arithmetic and
-              keyboard input.
-            </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript</div>
-            <div class="proj-ctas">
-              <a
-                class="small-btn"
-                href="https://github.com/YounisRafiq/A-Fully-functional-Calculator.git"
-                target="_blank"
-                rel="noopener"
-                >GitHub</a
-              >
-              <a
-                class="small-btn cta"
-                href="https://a-fully-functional-calculator.vercel.app
-"
-                target="_blank"
-                rel="noopener"
-                >Live Preview</a
-              >
-            </div>
-          </div>
-          <!-- project - 10 -->
-           <div class="project reveal" data-reveal>
-            <div class="project-thumb">
-              <img
-                src="images/note.jpg"
-                style="object-fit: cover"
-                alt="Weather app image - add your image here"
-              />
-            </div>
-            <h4>A Notes App</h4>
-            <p>
-              Create and organize notes with a clean, responsive interface, customizable themes, smooth animations, and easy delete functionality 
-            </p>
-            <div class="tech">Tech: HTML • CSS • JavaScript</div>
-            <div class="proj-ctas">
-              <a
-                class="small-btn"
-                href="https://github.com/YounisRafiq/A-Notes-App.git"
-                target="_blank"
-                >GitHub</a
-              >
-              <a class="small-btn cta" href="https://a-notes-app.vercel.app" target="_blank">Live Preview</a>
-            </div>
-          </div>
+          
+         
         </div>
 
       </section>
@@ -606,7 +441,7 @@
     
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
    <script src="script.js"></script>
 
