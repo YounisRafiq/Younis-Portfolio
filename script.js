@@ -2,7 +2,6 @@
         new Typed("#typed", {
           strings: [
             "Frontend Developer",
-            "Ai Expert",
             "UI / Interaction Designer",
             "Bug Resolver",
           ],
