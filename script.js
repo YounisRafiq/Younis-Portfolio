@@ -1,7 +1,8 @@
  document.addEventListener("DOMContentLoaded", function () {
         new Typed("#typed", {
           strings: [
-            "Frontend Developer",
+            "Full Stack Developer",
+            "MERN Developer",
             "UI / Interaction Designer",
             "Bug Resolver",
           ],
@@ -11,8 +12,7 @@
           loop: true,
           showCursor: false,
         });
-      });
-      
+      });      
     
 
 
